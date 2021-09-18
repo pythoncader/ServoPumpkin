@@ -26,6 +26,9 @@ int bottom2 = 5;
 int bottom1 = 6;
 int top2 = 7;
 
+
+//all of these minimum and maximums are defining each servo individually.
+//update them to fit your needs so the servos don't over-rotat
 int min0 = 30;
 int max0 = 100;
 int min1 = 30;
@@ -68,6 +71,7 @@ void set_angle(int channel, int myangle, float servowait=1){
   Serial.println(servowait*1000);
   delay(servowait*1000);
 }
+//pick random based on the range of each channel
 int pickrandom(int channel){
   switch (channel) {
   case 0:
@@ -96,16 +100,21 @@ int pickrandom(int channel){
     return myrandom;
 }
 }
+// have the other function pick a random angle based on a given channel, then tell the servo on that channel to move to that angle.
 int settorandom(int channel, float servowait=0){
   set_angle(channel, pickrandom(channel), servowait);
 }
 
+//
+//this runs continually:
 void loop() {
-  for(int i=0; i<8; i++){
-    settorandom(i);
-    delay(random(0, 300));
+  for(int i=0; i<8; i++){ //run through the eight servos on eight channels respectively
+    settorandom(i); //call the other function with the looped channel
+    delay(random(0, 300)); //wait a little bit before telling another servo to move.
   }
-  
-  
-  
 }
+
+//Written by pythoncader
+/*
+Creative Commons License
+*/
