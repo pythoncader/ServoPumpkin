@@ -29,24 +29,24 @@ int top2 = 7;
 
 //all of these minimum and maximums are defining each servo individually.
 //update them to fit your needs so the servos don't over-rotat
-int min0 = 30;
-int max0 = 100;
-int min1 = 30;
-int max1 = 80;
-int min2 = 85;
-int max2 = 180;
+int min0 = 35;
+int max0 = 82;
+int min1 = 137;
+int max1 = 180;
+int min2 = 35;
+int max2 = 84;
 
-int min3 = 95;
-int max3 = 180;
-int min4 = 40;
-int max4 = 100;
+int min3 = 80;
+int max3 = 135;
+int min4 = 30;
+int max4 = 70;
 
-int min5 = 85;
-int max5 = 180;
-int min6 = 25;
-int max6 = 110;
-int min7 = 5;
-int max7 = 80;
+int min5 = 90;
+int max5 = 140;
+int min6 = 80;
+int max6 = 150;
+int min7 = 38;
+int max7 = 83;
 int currentAngles[] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 void setup() {
