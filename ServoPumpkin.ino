@@ -13,20 +13,6 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 #define SERVOMIN  125 // this is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX  575 // this is the 'maximum' pulse length count (out of 4096)
 
-// our servo # counter
-uint8_t servonum = 0;
-int myrandom = 0;
-int pass = 0;
-int top3 = 0;
-int top1 = 1;
-int bottom3 = 2;
-int top4 = 3;
-int bottom4 = 4;
-int bottom2 = 5;
-int bottom1 = 6;
-int top2 = 7;
-
-
 //all of these minimum and maximums are defining each servo individually.
 //update them to fit your needs so the servos don't over-rotat
 int min0 = 35;
@@ -47,6 +33,7 @@ int min6 = 80;
 int max6 = 150;
 int min7 = 38;
 int max7 = 83;
+
 int currentAngles[] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 void setup() {
@@ -75,29 +62,21 @@ void set_angle(int channel, int myangle, float servowait = 1) {
 int pickrandom(int channel) {
   switch (channel) {
     case 0:
-      myrandom = random(min0, max0);
-      return myrandom;
+      return random(min0, max0);
     case 1:
-      myrandom = random(min1, max1);
-      return myrandom;
+      return random(min1, max1);
     case 2:
-      myrandom = random(min2, max2);
-      return myrandom;
+      return random(min2, max2);
     case 3:
-      myrandom = random(min3, max3);
-      return myrandom;
+      return random(min3, max3);
     case 4:
-      myrandom = random(min4, max4);
-      return myrandom;
+      return random(min4, max4);
     case 5:
-      myrandom = random(min5, max5);
-      return myrandom;
+      return random(min5, max5);
     case 6:
-      myrandom = random(min6, max6);
-      return myrandom;
+      return random(min6, max6);
     case 7:
-      myrandom = random(min7, max7);
-      return myrandom;
+      return random(min7, max7);
   }
 }
 // have the other function pick a random angle based on a given channel, then tell the servo on that channel to move to that angle.
