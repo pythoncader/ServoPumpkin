@@ -14,7 +14,7 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 #define SERVOMAX  575 // this is the 'maximum' pulse length count (out of 4096)
 
 //all of these minimum and maximums are defining each servo individually.
-//update them to fit your needs so the servos don't over-rotat
+//update them to fit your needs so the servos don't over-rotate
 int min0 = 35;
 int max0 = 82;
 int min1 = 137;
